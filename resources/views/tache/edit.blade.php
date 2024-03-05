@@ -20,7 +20,7 @@
         </div>
         <div class="form-group mb-3">
             <label for="date_tache">la date de la tache:</label>
-            <input type="text" class="form-control" id="date_tache" placeholder="Entrer la date de la tache"
+            <input type="date" class="form-control" id="date_tache" placeholder="Entrer la date de la tache"
                 name="date_tache" value="{{ $tache->date_tache }}">
         </div>
         <div class="form-group mb-3">
@@ -30,9 +30,9 @@
                 value="{{ $tache->Num_Employe }}">
                 @foreach ($employes as $index => $employe)
                     @if ($tache->Num_Employe == $employe->id)
-                        <option selected>{{ $employe->id }}</option>
+                        <option selected value="{{ $employe->id }}">{{ $employe->nom }} - {{ $employe->prénom }}</option>
                     @else
-                        <option>{{ $employe->id }}</option>
+                        <option value="{{ $employe->id }}">{{ $employe->nom }} - {{ $employe->prénom }}</option>
                     @endif
                 @endforeach
             </select>

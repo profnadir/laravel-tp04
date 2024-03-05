@@ -26,7 +26,7 @@
             <label for="Num_Employe">Numéro Employé:</label>
             <select class="form-control" id="Num_Employe" placeholder="Numéro de l'Employé" name="Num_Employe">
                 @foreach ($employes as $index => $employe)
-                    <option>{{ $employe->id }}</option>
+                    <option value="{{ $employe->id }}">{{ $employe->nom }} - {{ $employe->prénom }}</option>
                 @endforeach
             </select>
         </div>

@@ -25,7 +25,7 @@
                 <td>{{ $index + 1 }}</td>
                 <td>{{ $tache->intituléTache }}</td>
                 <td>{{ $tache->date_tache }}</td>
-                <td>{{ $tache->Num_Employe }}</td>
+                <td>{{ $tache->employe->nom }} / {{ $tache->employe->prénom}}</td>
                 <td>
                     <form action="{{ url('tache/' . $tache->id) }}" method="POST">
                         @csrf

@@ -29,6 +29,8 @@ Route::controller(EmployeController::class)->group(function () {
     Route::delete('/employe/{id}', 'destroy');
 });
 
+//Route::resource('/employes',EmployeController::class);
+
 Route::controller(TacheController::class)->group(function () {
     Route::get('/tache', 'index');
     Route::get('/tache/create', 'create');

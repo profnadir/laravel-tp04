@@ -23,4 +23,14 @@
             <td> {{ $employe->Salaire }} DH</td>
         </tr>
     </table>
+
+    <h2>Liste des taches</h2>
+
+    <ul>
+        @forelse ($employe->taches as $tache)
+            <li>{{ $tache->intituléTache }}</li>
+        @empty
+            <p>aucune tache</p>
+        @endforelse
+    </ul>
 @endsection

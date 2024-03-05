@@ -13,7 +13,7 @@
         </tr>
         <tr>
             <th>Numéro Employe:</th>
-            <td>{{ $tache->Num_Employe }}</td>
+            <td>{{ $tache->employe->nom }}</td>
         </tr>
     </table>
 @endsection

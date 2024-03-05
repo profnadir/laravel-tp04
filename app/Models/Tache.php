@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tache extends Model
 {
     use HasFactory;
+
+    function employe()
+    {
+        return $this->belongsTo(Employe::class,'Num_Employe');    
+    }
 }
