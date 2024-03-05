@@ -12,10 +12,21 @@ class EmployeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $employes = Employe::all();
-        return view('employe.index', compact('employes'));
+
+        $villes = Employe::distinct()->get('ville');
+
+        if($request->query('nom')){
+            //select * from employes where nom like %$request->query('nom')%
+            $employes = Employe::where('nom','like', '%'.$request->query('nom').'%')->get();
+        }elseif($request->query('ville')){
+            $employes = Employe::where('ville','=', $request->query('ville'))->get();
+        }
+        else{
+            $employes = Employe::all();
+        }
+        return view('employe.index', compact('employes','villes'));
     }
     /**
      * Show the form for creating a new resource.
